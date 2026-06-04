@@ -107,114 +107,13 @@ leetcode-patterns/
 |         |    |
 |         |    |--> range_sum_query_immutable_v1.cpp
 |         |    |--> README_v1.md
-|         |
-|         |--> 304_range_sum_query_2d_immutable/
 |         |    |
-|         |    |--> range_sum_query_2d_immutable_v0.cpp
-|         |    |--> README_v0.md
+|         |    |--> range_sum_query_immutable_v2.cpp
+|         |    |--> README_v2.md
 |         |    |
-|         |    |--> range_sum_query_2d_immutable_v1.cpp
-|         |    |--> README_v1.md
-|         |
-|         |--> 560_subarray_sum_equals_k/
-|              |
-|              |--> subarray_sum_equals_k_v0.cpp
-|              |--> README_v0.md
-|              |
-|              |--> subarray_sum_equals_k_v1.cpp
-|              |--> README_v1.md
-|
-|--> sliding_window/
-|    |
-|    |--> sliding_window_v_init.cpp
-|    |--> README_v_init.md
-|    |
-|    |--> leetcode_problems/
-|         |
-|         |--> 3_longest_substring_without_repeating_characters/
-|         |    |
-|         |    |--> longest_substring_without_repeating_characters_v0.cpp
-|         |    |--> README_v0.md
-|         |    |
-|         |    |--> longest_substring_without_repeating_characters_v1.cpp
-|         |    |--> README_v1.md
-|         |
-|         |--> 209_minimum_size_subarray_sum/
-|              |
-|              |--> minimum_size_subarray_sum_v0.cpp
-|              |--> README_v0.md
-|              |
-|              |--> minimum_size_subarray_sum_v1.cpp
-|              |--> README_v1.md
-|
-|--> two_pointers/
-|    |
-|    |--> two_pointers_v_init.cpp
-|    |--> README_v_init.md
-|    |
-|    |--> leetcode_problems/
-|         |
-|         |--> 167_two_sum_ii_input_array_is_sorted/
-|         |    |
-|         |    |--> two_sum_ii_input_array_is_sorted_v0.cpp
-|         |    |--> README_v0.md
-|         |    |
-|         |    |--> two_sum_ii_input_array_is_sorted_v1.cpp
-|         |    |--> README_v1.md
-|         |
-|         |--> 125_valid_palindrome/
-|              |
-|              |--> valid_palindrome_v0.cpp
-|              |--> README_v0.md
-|              |
-|              |--> valid_palindrome_v1.cpp
-|              |--> README_v1.md
-|
-|--> hash_map/
-|    |
-|    |--> hash_map_v_init.cpp
-|    |--> README_v_init.md
-|    |
-|    |--> leetcode_problems/
-|         |
-|         |--> 1_two_sum/
-|         |    |
-|         |    |--> two_sum_v0.cpp
-|         |    |--> README_v0.md
-|         |    |
-|         |    |--> two_sum_v1.cpp
-|         |    |--> README_v1.md
-|         |
-|         |--> 49_group_anagrams/
-|              |
-|              |--> group_anagrams_v0.cpp
-|              |--> README_v0.md
-|              |
-|              |--> group_anagrams_v1.cpp
-|              |--> README_v1.md
-|
-|--> stack/
-|    |
-|    |--> stack_v_init.cpp
-|    |--> README_v_init.md
-|    |
-|    |--> leetcode_problems/
-|         |
-|         |--> 20_valid_parentheses/
-|         |    |
-|         |    |--> valid_parentheses_v0.cpp
-|         |    |--> README_v0.md
-|         |    |
-|         |    |--> valid_parentheses_v1.cpp
-|         |    |--> README_v1.md
-|         |
-|         |--> 739_daily_temperatures/
-|              |
-|              |--> daily_temperatures_v0.cpp
-|              |--> README_v0.md
-|              |
-|              |--> daily_temperatures_v1.cpp
-|              |--> README_v1.md
+|         |    |--> range_sum_query_immutable_v3.cpp
+|         |    |--> README_v3.md
+
 ```
 
 ---
