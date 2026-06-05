@@ -48,11 +48,6 @@ public:
     int sumRange(int left, int right) {
         
         int sum = 0;
-    
-        // 1st Improve
-        if (left < 0 || left > right || right >= nums.size())
-            throw std::out_of_range("Invalid range index");
-
 
         for(int i = left; i <= right; i++) {
 
@@ -68,43 +63,59 @@ public:
 
 int main (void) {
 
-    // 2nd Improve
-    int sizeOfVec;
     
-    printf("Size of Vector:\n");
-    std::cin >> sizeOfVec;
+    int sizeOfVec;
+
+    // Validate vector size based on constraint - 1st improvement
+    do {    
+        printf("Size of input array or vector in range 1 <= size <= 10^4:\n");
+        std::cin >> sizeOfVec;
+    } while (sizeOfVec < 1 || sizeOfVec > 10000);
+    
     
     // Vector declaration
     std::vector<int> nums(sizeOfVec);
 
+    
     // Input vector
-    printf("Input the vector elements sequencially..\n");
-    for (int i = 0; i < sizeOfVec; i++) 
-        std::cin >> nums[i];
+    printf("Input the vector elements with enter..\n");
+    for (int i = 0; i < sizeOfVec; i++) {
+        
+        // Validate each element based on constraint - 2nd improvement
+        do {
+            printf("Insert value:");
+            std::cin >> nums[i];
+        } while (nums[i] < -100000 || nums[i] > 100000);
+    }
+
 
     // Object instantiate
     NumArray numArray(nums);
 
-    // 3rd Improve
+    
     int numOfRanges;
     int left, right;
 
-    // Take number of range input
-    std::cin >> numOfRanges;
-
+    // Take number of range queries
+    // Validate each element based on constraint - 2nd improvement
+    do{
+        printf("Take number of ranges:\n");
+        std::cin >> numOfRanges;
+    } while (numOfRanges < 0 || numOfRanges > 10000);
+    
+    
     // Take range inputs
     for (int i = 0; i < numOfRanges; i++){
+        
+        do {
+            printf("Enter left and right of the range:\n");
+            std::cin >> left; 
+            std::cin >> right;
+        } while(left < 0 || left > right || right >= nums.size());
+        
+        // Validate range inside sumRange() - 2nd improvement
+        printf("%d\n", numArray.sumRange(left, right));        
 
-        std::cin >> left; 
-        std::cin >> right;
-
-        try{
-            printf("%d\n", numArray.sumRange(left, right));        
-        }
-
-        catch (const std::out_of_range& e) {
-            printf ("%s\n", e.what());
-        }
     }
 
     return 0;
