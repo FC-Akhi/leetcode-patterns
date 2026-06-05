@@ -7,7 +7,7 @@
 * For each query, it calculates the sum from left index to right index directly.
 *
 * Approach:
-* Brute-force range sum calculation. 
+* Brute-force range sum calculation ONLY for Leetcode. 
 *
 * Author: F.C.Fahi 
 * Date: 04 June 2026 
@@ -92,7 +92,7 @@ public:
 // Leetcode part ends here
 
 
-// For my own test 
+// For my own test in local machine
 /* 
 * Function: main 
 * Description: 
@@ -108,41 +108,41 @@ public:
 *   2. Call sumRange() with different left and right values. 
 *   3. Print the returned sums. 
 */
-int main (void) {
+// int main (void) {
 
-    std::vector<int> nums = {-2, 0, 3, -5, 2, -1};
+//     std::vector<int> nums = {-2, 0, 3, -5, 2, -1};
 
 
-    /* 
-    * Creates a normal NumArray object without using new.
-    * The input vector nums is passed to the constructor.
-    * The constructor stores a copy of nums inside the object.
-    * Since this is a normal object, memory is managed automatically.
-    * The object will be destroyed automatically when it goes out of scope.
-    */
-    NumArray numArray(nums);
+//     /* 
+//     * Creates a normal NumArray object without using new.
+//     * The input vector nums is passed to the constructor.
+//     * The constructor stores a copy of nums inside the object.
+//     * Since this is a normal object, memory is managed automatically.
+//     * The object will be destroyed automatically when it goes out of scope.
+//     */
+//     NumArray numArray(nums);
 
-    printf("%d\n", numArray.sumRange(0, 2));
-    printf("%d\n", numArray.sumRange(2, 5));
-    printf("%d\n", numArray.sumRange(0, 5));
+//     printf("%d\n", numArray.sumRange(0, 2));
+//     printf("%d\n", numArray.sumRange(2, 5));
+//     printf("%d\n", numArray.sumRange(0, 5));
 
     
 
-    /* 
-    * Creates a NumArray object dynamically using new.
-    * Because new is used, numArrayPtr is a pointer to a NumArray object.
-    * The input vector nums is passed to the constructor.
-    * The constructor stores a copy of nums inside the object.
-    * Since the object is created with new, it must be deleted manually.
-    */
-    NumArray* numArrayPtr = new NumArray(nums);
+//     /* 
+//     * Creates a NumArray object dynamically using new.
+//     * Because new is used, numArrayPtr is a pointer to a NumArray object.
+//     * The input vector nums is passed to the constructor.
+//     * The constructor stores a copy of nums inside the object.
+//     * Since the object is created with new, it must be deleted manually.
+//     */
+//     NumArray* numArrayPtr = new NumArray(nums);
 
-    printf("%d\n", numArrayPtr->sumRange(0, 2));
-    printf("%d\n", numArrayPtr->sumRange(2, 5));
-    printf("%d\n", numArrayPtr->sumRange(0, 5));
+//     printf("%d\n", numArrayPtr->sumRange(0, 2));
+//     printf("%d\n", numArrayPtr->sumRange(2, 5));
+//     printf("%d\n", numArrayPtr->sumRange(0, 5));
 
-    delete numArrayPtr;
+//     delete numArrayPtr;
 
 
-    return 0;
-}
+//     return 0;
+// }
