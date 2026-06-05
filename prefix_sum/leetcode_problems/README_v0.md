@@ -155,7 +155,7 @@ For LeetCode, we only write:
 3. The sumRange method
 ```
 
-We do not write:
+We don't need to write:
 
 ```text
 1. main function
@@ -177,34 +177,31 @@ We do not write:
 
 ---
 
-# Limitations of the code
+# Limitations of the Current Implementation, Excluding LeetCode Format
 - This is a brute-force solution for range sum queries
 
 - Not all constraints are covered
-- No user input for input array or the range (limitation for local test code)
-- Require O(n) copies from input vector to object vector
+- No user input for input array or the range (limited for local test code)
 - Extra space of O(n) required to have copy of input vector inside object
+- The code does not use prefix sum preprocessing.
 - Each sumRange call takes O(n) time in the worst case. For m queries, 
 the total worst-case time is O(n * m)
-- The code does not use prefix sum preprocessing.
 
 
 ---
 
 # Improved codes
 
-```303_range_sum_query_immutable_v0```
-- Not all constraints are covered
-- No user input for input array or the range (limitation for local test code)
-
 ```303_range_sum_query_immutable_v1```
-- Require O(n) copies from input vector to object vector
-- Extra space of O(n) required to have copy of input vector inside object
+- All constraints are covered
+- Take user input for input array and the range (limited for local test code)
+- Deal the issue: Extra space of O(n) required to have copy 
+of input vector inside object
 
 ```303_range_sum_query_immutable_v2```
+- The code does not use prefix sum preprocessing.
 - Each sumRange call takes O(n) time in the worst case. For m queries, 
 the total worst-case time is O(n * m)
-- The code does not use prefix sum preprocessing.
 
 ```303_range_sum_query_immutable_v3```
 - Improve of prefix sum processing
