@@ -1,9 +1,9 @@
-# 303. Range Sum Query - Immutable
+# Range Sum Query - Immutable
 
 ## Improved Code
 
 ```text
-303_range_sum_query_immutable_v1
+range_sum_query_immutable_v1
 ```
 
 ---
@@ -254,6 +254,9 @@ Simplified:
 ```text
 -> O(2n + (m * n))
 -> O((m * n))
+If number of ranges is also n, then:
+m = n
+-> O(n²)       // simplified final Big-O
 ```
 
 The input validation loops depend on how many invalid attempts the user makes. Under normal valid input, they do not change the main algorithmic complexity.
@@ -276,7 +279,7 @@ O(n)
 
 This version is still brute-force.
 
-For every query, it loops from `left` to `right` again.
+For every query, it loops from `left` to `right`.
 
 So if there are many queries, the solution can become slow.
 

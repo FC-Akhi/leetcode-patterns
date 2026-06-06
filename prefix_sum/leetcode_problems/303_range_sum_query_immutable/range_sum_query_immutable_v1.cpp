@@ -1,20 +1,22 @@
 /* 
-* Title: LeetCode 303 - Range Sum Query Immutable
+* Title: range_sum_query_immutable_v1
 *
 * Description: 
-* This program implements a simple version of the NumArray class for solving
-* range sum queries. The program takes a vector size and vector elements from
-* the user, then creates a NumArray object using that vector.
+* This program implements a local testing version of the Range Sum Query problem.
+* It takes an input vector from the user, validates the vector size and element
+* values based on the given constraints, and then creates a NumArray object
 *
-* After that, the program takes multiple range queries. For each query, it
-* calculates the sum of elements from the left index to the right index,
-* including both indices.
+* After that, the program takes multiple range queries. It also validates the 
+* range values. 
+* For each query, it calculates the sum of elements from the left index 
+* to the right index, including both indices.
 *
 * The sumRange() method uses a brute-force approach by looping from left to
-* right for every query. It also checks invalid ranges, such as negative left
-* index, left greater than right, or right index outside the vector size.
-* If the range is invalid, it throws an out_of_range exception, and the main
-* function catches the exception and prints an error message.
+* right for every query. 
+*
+* Main Improvements:
+* 1. Validates input vector size, each vector element and range values. 
+* And Takes input from the user for local testing. (current)
 *
 * Approach:
 * Brute-force range sum calculation
@@ -25,9 +27,6 @@
 #include <iostream>
 #include<stdio.h>
 #include<vector>
-
-// Part of Improvement - 1
-#include <stdexcept>
 
 
 class NumArray {
@@ -66,9 +65,10 @@ int main (void) {
     
     int sizeOfVec;
 
-    // Validate vector size based on constraint - 1st improvement
+    // Validate vector size based on constraint - 1st stage improvement
     do {    
         printf("Size of input array or vector in range 1 <= size <= 10^4:\n");
+        // Take user input - 1st stage improvement
         std::cin >> sizeOfVec;
     } while (sizeOfVec < 1 || sizeOfVec > 10000);
     
@@ -81,9 +81,10 @@ int main (void) {
     printf("Input the vector elements with enter..\n");
     for (int i = 0; i < sizeOfVec; i++) {
         
-        // Validate each element based on constraint - 2nd improvement
+        // Validate each element based on constraint - 1st stage improvement
         do {
             printf("Insert value:");
+            // Take user input - 1st stage improvement
             std::cin >> nums[i];
         } while (nums[i] < -100000 || nums[i] > 100000);
     }
@@ -97,9 +98,10 @@ int main (void) {
     int left, right;
 
     // Take number of range queries
-    // Validate each element based on constraint - 2nd improvement
+    // Validate each element based on constraint - 1st stage improvement
     do{
         printf("Take number of ranges:\n");
+        // Take user input - 1st stage improvement
         std::cin >> numOfRanges;
     } while (numOfRanges < 0 || numOfRanges > 10000);
     
@@ -113,7 +115,7 @@ int main (void) {
             std::cin >> right;
         } while(left < 0 || left > right || right >= nums.size());
         
-        // Validate range inside sumRange() - 2nd improvement
+        // Validate range inside sumRange() - 1st stage improvement
         printf("%d\n", numArray.sumRange(left, right));        
 
     }

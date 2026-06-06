@@ -1,3 +1,12 @@
+# Range Sum Query - Immutable
+
+## Bruteforce Code
+
+```text
+range_sum_query_immutable_v0
+```
+---
+
 # How LeetCode Expects the Code
 - For this problem, LeetCode expects only the `NumArray` class.
 - We do not need to write the `main()` function.
@@ -199,9 +208,8 @@ the total worst-case time is O(n * m)
 of input vector inside object
 
 ```303_range_sum_query_immutable_v2```
-- The code does not use prefix sum preprocessing.
-- Each sumRange call takes O(n) time in the worst case. For m queries, 
-the total worst-case time is O(n * m)
+- The code use prefix sum preprocessing.
+- Each sumRange call takes O(1) time complexity
 
 ```303_range_sum_query_immutable_v3```
-- Improve of prefix sum processing
+- Improve of prefix sum preprocessing further 

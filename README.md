@@ -1,10 +1,9 @@
+# 🚀 LeetCode Patterns Practice Repository
 
-# LeetCode Patterns Practice Repository
+This repository documents my structured practice of **15–16 important LeetCode coding patterns**.  
+For each pattern, I will solve related LeetCode problems by starting with a **brute-force approach** first, then gradually improving the solutions step by step.
 
-This repository documents my structured practice of **15–16 important LeetCode coding patterns**.
-For each pattern, I will solve related LeetCode problems using bruteforce initially then gradually have improved versions.
-
-The goal of this repository is to build a clear understanding of each pattern from the bruteforce level to optimized approaches.
+The goal of this repository is to build a clear understanding of each pattern from the **brute-force level** to **optimized approaches**.
 
 ---
 
@@ -32,8 +31,8 @@ For example:
 range_sum_query_immutable_v0.cpp ---> Bruteforce approach and only leetcode submitable
 range_sum_query_immutable_v1.cpp ---> Optimized and can also run and test in local system
 range_sum_query_immutable_v2.cpp ---> More optimized and can also run and test in local system
-...
 ```
+
 
 Each code version also has its own detailed README file explaining the logic, approach, complexity, and limitations.
 

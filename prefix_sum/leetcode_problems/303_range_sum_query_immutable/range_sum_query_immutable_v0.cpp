@@ -1,5 +1,5 @@
 /* 
-* Title: LeetCode 303 - Range Sum Query Immutable 
+* Title: range_sum_query_immutable_v0
 * Description: 
 * This program implements the NumArray class using a 
 * brute-force approach. 

@@ -1,5 +1,10 @@
-# Static Array, Dynamic Array, Linked List, and Vector in C++
+## 🚀 1st Learning
 
+🗓️ **Date:** 04 June, 2026  
+🧠 **Topic:** Static Array, Dynamic Array, Linked List, and Vector in C++
+
+
+# Static Array, Dynamic Array, Linked List, and Vector in C++
 ## Overview
 
 In C++, there are different ways to store multiple values of the same type.
@@ -691,3 +696,7 @@ You need a dynamic array with fast index access and automatic memory management.
 ```
 
 For most modern C++ and LeetCode-style problems, `vector` is the best default choice.
+
+---
+---
+---
