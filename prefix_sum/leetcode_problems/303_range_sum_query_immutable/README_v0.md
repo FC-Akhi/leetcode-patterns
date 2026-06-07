@@ -201,15 +201,24 @@ the total worst-case time is O(n * m)
 
 # Improved codes
 
-```303_range_sum_query_immutable_v1```
+```range_sum_query_immutable_v1```
 - All constraints are covered
 - Take user input for input array and the range (limited for local test code)
 - Deal the issue: Extra space of O(n) required to have copy 
 of input vector inside object
 
-```303_range_sum_query_immutable_v2```
+```range_sum_query_immutable_v2```
 - The code use prefix sum preprocessing.
 - Each sumRange call takes O(1) time complexity
 
-```303_range_sum_query_immutable_v3```
+```range_sum_query_immutable_v3```
 - Improve of prefix sum preprocessing further 
+
+
+# Something more extras 😉 😜 😏
+
+```range_sum_query_immutable_v4```
+- Industry-grade dev code
+
+```range_sum_query_immutable_v5```
+- Industry-grade prod code

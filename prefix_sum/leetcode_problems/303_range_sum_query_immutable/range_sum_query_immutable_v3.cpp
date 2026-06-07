@@ -96,22 +96,6 @@ public:
         this->nums = nums;
     }
 
-    // Method
-    int sumRange(
-        std::vector<int>& prefixSum,
-        int left, 
-        int right) {
-        
-
-        // Using Prefix Sum and calulating range 
-        // sum query in constant time - 2nd stage improvement 
-        if(left == 0) {
-            return prefixSum[right];
-        }
-
-        return (prefixSum[right] - prefixSum[left - 1]);
-    }
-
 
     /* 
     * Method: getPrefixSum 
@@ -130,7 +114,7 @@ public:
     *    Returns a prefix sum vector. 
     */
     std::vector<int> getPrefixSum(
-        std::vector<int>& nums, 
+        const std::vector<int>& nums, 
         int sizeOfVec) {
 
         // Vector declaration
@@ -150,6 +134,25 @@ public:
         // pointer to the vector
         return prefixSum;
     }
+
+
+    // Method
+    int sumRange(
+        const std::vector<int>& prefixSum,
+        int left, 
+        int right) {
+        
+
+        // Using Prefix Sum and calulating range 
+        // sum query in constant time - 2nd stage improvement 
+        if(left == 0) {
+            return prefixSum[right];
+        }
+
+        return (prefixSum[right] - prefixSum[left - 1]);
+    }
+
+
 };
 
 

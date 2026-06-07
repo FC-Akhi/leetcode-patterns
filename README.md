@@ -3,7 +3,18 @@
 This repository documents my structured practice of **15–16 important LeetCode coding patterns**.  
 For each pattern, I will solve related LeetCode problems by starting with a **brute-force approach** first, then gradually improving the solutions step by step.
 
-The goal of this repository is to build a clear understanding of each pattern from the **brute-force level** to **optimized approaches**.
+The goal of this repository is to build a clear understanding of each pattern from the **brute-force level** to **optimized approaches**. And also I am using this as starter initiation before I dive deep in to DSA. 
+
+---
+
+## Why do people still need practice DSA while AI can solve programming problems?
+
+AI can generate code, but developers still need DSA knowledge to understand, verify, debug, and improve that code.
+
+DSA practice helps build problem-solving ability. It also helps us understand time complexity, space complexity, edge cases, and design trade-offs.
+
+AI can assist, but a developer must still know whether the solution is correct, efficient, and safe.
+
 
 ---
 

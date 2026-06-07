@@ -5,40 +5,6 @@
 ```text
 range_sum_query_immutable_v3
 ```
----
-
-## What am I solving?
-
-I am solving the **Range Sum Query - Immutable** problem.
-
-The goal is to find the sum of elements between two indices:
-
-```text
-left and right
-```
-
-Both `left` and `right` are included in the sum.
-
-Example:
-
-```text
-nums = [1, 2, 3, 4, 5]
-
-sumRange(1, 3) = 2 + 3 + 4 = 9
-```
-
----
-
-## Why am I solving it?
-
-I am solving this problem to understand how **prefix sum** improves repeated range sum queries. 🚀
-
-In the brute-force approach, every query needs a loop from `left` to `right`.
-
-That becomes slow when there are many queries.
-
-In this version, I first create a prefix sum vector.
-Then each range query can be answered in constant time.
 
 ---
 
