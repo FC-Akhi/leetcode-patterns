@@ -5,8 +5,42 @@
 # [1. Prefix Sum youtube link](https://youtu.be/DjYZk8nrXVY?t=34)
 
 
-# Prefix Sum
+## Directory Tree
 
+```text
+prefix_sum/
+|
+|--> README_init.md
+|--> prefix_sum.png
+|--> leetcode_problems/
+|
+|--> 303_range_sum_query_immutable/
+|    |--> prod_code
+|    |    |--> build.sh
+|    |    |--> num_array.cpp
+|    |    |--> num_array.hpp
+|    |    |--> range_sum_query_immutable_prod.cpp
+|    | 
+|    |--> problem_statement.png
+|    |--> range_sum_query_immutable_v0.cpp
+|    |--> range_sum_query_immutable_v1.cpp
+|    |--> range_sum_query_immutable_v2.cpp
+|    |--> range_sum_query_immutable_v3.cpp
+|    |--> range_sum_query_immutable_v4.cpp
+|    |--> README_learning_1.md
+|    |--> README_learning_2.md
+|    |--> README_learning_3.md
+|    |--> README_learning_4.md
+|    |--> README_learning_5.md
+|    |--> README_learning_6.md
+|    |--> README_v0.md
+|    |--> README_v1.md
+|    |--> README_v2.md
+|    |--> README_v3.md
+|    |--> README_v4.md
+```
+
+# Prefix Sum
 ## What is Prefix Sum?
 
 Prefix sum is a technique where we store the cumulative sum of an array.
@@ -85,27 +119,6 @@ sumRange(1, 3) = prefix_sum[3] - prefix_sum[0]
 ```
 
 So, prefix sum helps reduce repeated work.
-
----
-
-## Time Complexity
-
-Without prefix sum:
-
-```text
-Each query takes O(n) time in the worst case.
-For m queries, total time = O(m * n)
-```
-
-With prefix sum:
-
-```text
-Building prefix sum array takes O(n)
-Each query takes O(1)
-For m queries, total time = O(n + m)
-```
-
-So prefix sum is useful when we have many range sum queries.
 
 ---
 

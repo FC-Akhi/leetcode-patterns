@@ -10,7 +10,7 @@ NumArray::NumArray(const std::vector<int>& nums) {
     prefix_sum_.resize(nums.size());
     prefix_sum_[0] = nums[0];
 
-    for (int i = 1; i < static_cast<int>(nums.size()); i++) {
+    for (size_t i = 1; i < nums.size(); i++) {
         prefix_sum_[i] = prefix_sum_[i - 1] + nums[i];
     }
 }
@@ -20,9 +20,12 @@ int NumArray::sumRange(int left, int right) const {
         throw std::out_of_range("Invalid range index");
     }
 
-    if (left == 0) {
-        return prefix_sum_[right];
+    size_t left_c =  static_cast<size_t>(left);
+    size_t right_c =  static_cast<size_t>(right);
+
+    if (left_c == 0) {
+        return prefix_sum_[right_c];
     }
 
-    return prefix_sum_[right] - prefix_sum_[left - 1];
+    return prefix_sum_[right_c] - prefix_sum_[left_c - 1];
 }

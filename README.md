@@ -3,7 +3,7 @@
 This repository documents my structured practice of **15–16 important LeetCode coding patterns**.  
 For each pattern, I will solve related LeetCode problems by starting with a **brute-force approach** first, then gradually improving the solutions step by step.
 
-The goal of this repository is to build a clear understanding of each pattern from the **brute-force level** to **optimized approaches**. And also I am using this as starter initiation before I dive deep in to DSA. 
+The goal of this repository is to build a clear understanding of each pattern from the **brute-force level** to **optimized approaches**. And also I am using this as initiation before I dive deep in to DSA. 
 
 ---
 
@@ -40,13 +40,22 @@ For example:
 
 ```text
 range_sum_query_immutable_v0.cpp ---> Bruteforce approach and only leetcode submitable
-range_sum_query_immutable_v1.cpp ---> Optimized and can also run and test in local system
+range_sum_query_immutable_v1.cpp ---> Optimized prefix sum solution with local testing and industry-style development structure (except 303 problem set)
 range_sum_query_immutable_v2.cpp ---> More optimized and can also run and test in local system
+...
 ```
 
 
 Each code version also has its own detailed README file explaining the logic, approach, complexity, and limitations.
 
+Additionally, I maintain separate README files to document the key learnings I gather throughout this journey.
+
+For examnple:
+
+```text
+README_learning_1.md
+...
+```
 ---
 
 ## Naming Convention
@@ -62,6 +71,8 @@ README_v1.md
 
 <problem_name>_v2.cpp
 README_v2.md
+
+...
 ```
 
 Here:
@@ -69,10 +80,10 @@ Here:
 * `v0` usually represents the brute-force solution and only leetcode submitable.
 * `v1` represents an improved version.
 * `v2` or later versions represent further optimized approaches.
-
+...
 ---
 
-## Example Directory Tree
+## Directory Tree
 
 ```text
 leetcode-patterns/
@@ -80,23 +91,22 @@ leetcode-patterns/
 |--> prefix_sum/
 |    |
 |    |--> README_init.md
-|    |
+|    |--> prefix_sum.png
 |    |--> leetcode_problems/
 |         |
 |         |--> 303_range_sum_query_immutable/
 |         |    |
 |         |    |--> range_sum_query_immutable_v0.cpp
-|         |    |--> README_v0.md
-|         |    |
 |         |    |--> range_sum_query_immutable_v1.cpp
-|         |    |--> README_v1.md
-|         |    |
 |         |    |--> range_sum_query_immutable_v2.cpp
-|         |    |--> README_v2.md
-|         |    |
 |         |    |--> range_sum_query_immutable_v3.cpp
+|         |    |--> README_v0.md
+|         |    |--> README_v1.md
+|         |    |--> README_v2.md
 |         |    |--> README_v3.md
-
+|         |    |--> README_learning_1.md
+|         |    |--> README_learning_2.md
+...
 ```
 ---
 ---
@@ -105,12 +115,13 @@ leetcode-patterns/
 
 The purpose of this repository is to:
 
-* Learn each LeetCode pattern from the basic level.
+* Learn each LeetCode pattern (17 approx) from the basic level.
 * Start with the brute-force.
 * Improve each solution step by step.
 * Keep detailed README files for every version.
 * Compare different approaches clearly.
 * Prepare for technical interviews by understanding patterns instead of memorizing solutions.
+* Log the leanrings in differnet README's
 
 ---
 
@@ -123,41 +134,11 @@ For each pattern, I follow this workflow:
 2. Solve related LeetCode problems first in bruteforce way.
 3. Write the README.md of the first version (bruteforce)
 5. For each problem, write multiple updated versions.
-6. Write a detailed README for each version.
-7. Compare brute-force, improved, and optimized approaches.
-8. Record time and space complexity for each version.
+6. Write a detailed README for each solution version, explaining the logic, approach, complexity, improvements, and limitations.
+7. Also maintain separate learning README files where I log new concepts, observations, and lessons learned throughout the journey.
+8. Compare brute-force, improved, and optimized approaches.
+9. Record time and space complexity for each version.
 ```
-
----
-
-## Example Workflow for Prefix Sum
-
-```text
-prefix_sum/
-|
-|--> README_init.md
-|
-|--> leetcode_problems/
-     |
-     |--> 303_range_sum_query_immutable/
-          |
-          |--> range_sum_query_immutable_v0.cpp
-          |--> README_v0.md
-          |
-          |--> range_sum_query_immutable_v1.cpp
-          |--> README_v1.md
-          |
-          |--> range_sum_query_immutable_v2.cpp
-          |--> README_v2.md
-```
-
-In this example:
-
-* `README_init.md` explains the core concept and attach the Youtube links.
-* `range_sum_query_immutable_v0.cpp` may contain the brute-force solution.
-* `range_sum_query_immutable_v1.cpp` may contain the optimized solution.
-* `range_sum_query_immutable_v2.cpp` may contain the optimized prefix sum solution.
-* Each README explains the reasoning, implementation, and complexity.
 
 ---
 

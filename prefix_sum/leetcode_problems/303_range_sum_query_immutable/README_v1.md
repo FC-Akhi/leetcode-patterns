@@ -155,59 +155,6 @@ Use extra O(n) space, but preserve the original input vector.
 
 ---
 
-## Real-Life Use Cases
-
-Range sum queries can appear in many real-life systems, such as:
-
-```text
-bank transaction summaries, monthly expense tracking, sales reports, website visitor analytics, inventory tracking, electricity usage calculation, student marks analysis, fitness progress tracking, stock price analysis, sensor data monitoring
-```
-
-For example, a banking app may need to answer:
-
-```text
-How much money did the user spend between day 5 and day 20?
-```
-
-A website analytics dashboard may need to answer:
-
-```text
-How many visitors came between Monday and Friday?
-```
-
-A sales system may need to answer:
-
-```text
-What was the total revenue between two selected dates?
-```
-
----
-
-## Real-Life Data Science Use Case / Implications
-
-In Data Science, range sum queries are useful when working with ordered data or time-series data.
-
-Examples include:
-
-```text
-daily sales data, stock prices, user activity logs, temperature readings, financial transactions, website traffic, sensor measurements
-```
-
-A data scientist may need to calculate:
-
-```text
-total sales over a date range
-total website visits over a week
-total rainfall between two months
-total energy consumption during a time window
-total number of events in a log range
-```
-
-
-The brute-force approach works for small data, but for large datasets and many queries, it can become slow. That is why this problem naturally leads to the optimized **prefix sum** approach.
-
----
-
 ## Complexity Analysis
 
 Let:
