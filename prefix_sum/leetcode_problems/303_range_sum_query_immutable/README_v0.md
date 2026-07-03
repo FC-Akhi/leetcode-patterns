@@ -89,28 +89,6 @@ This method must return the sum from index `left` to index `right`.
 
 Both `left` and `right` are included.
 
----
-
-## What LeetCode Handles Automatically
-
-LeetCode handles this part automatically:
-
-```text
-["NumArray", "sumRange", "sumRange", "sumRange"]
-[[[-2, 0, 3, -5, 2, -1]], [0, 2], [2, 5], [0, 5]]
-```
-
-We do not need to parse this input manually.
-
-LeetCode will internally do something like:
-
-```cpp
-NumArray numArray(nums);
-// these are differnet queries!!!
-numArray.sumRange(0, 2);
-numArray.sumRange(2, 5);
-numArray.sumRange(0, 5);
-```
 
 ---
 
@@ -186,7 +164,7 @@ We don't need to write:
 
 ---
 
-# Limitations of the Current Implementation, Excluding LeetCode Format
+# Limitations of the Current Implementation
 - This is a brute-force solution for range sum queries
 
 - Not all constraints are covered
@@ -199,7 +177,7 @@ the total worst-case time is O(n * m)
 
 ---
 
-# Improved codes
+# Possible Optimized code
 
 ```range_sum_query_immutable_v1```
 - All constraints are covered

@@ -203,5 +203,3 @@ Do some preprocessing once, then answer many range queries faster.
 ```
 
 Prefix sum is useful in programming, databases, analytics, finance, payroll systems, and data science.
-
-
