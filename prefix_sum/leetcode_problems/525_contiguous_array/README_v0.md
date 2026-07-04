@@ -136,57 +136,339 @@ We convert the binary input array like this:
 
 After conversion:
 
-* A subarray with equal number of `0`s and `1`s will have sum `0`.
-* If the same prefix sum appears at two different indices, then the subarray between those indices has sum `0`.
-* A sum of `0` means the subarray has equal number of `0`s and `1`s.
+* Original `0` becomes balance value `-1`.
+* Original `1` becomes balance value `+1`.
+* A subarray with equal number of `0`s and `1`s will have balance sum `0`.
+
+So the problem becomes:
+
+```text
+Find the longest subarray whose balance sum is 0.
+```
+
+To do this, we use prefix sum.
 
 ---
 
-# Approach
+# Important Index Idea
 
-The current implementation follows these steps:
+For prefix sum, we imagine one virtual position before the original array starts.
 
-* Get the size of the input vector.
-* Create a `balance_array`.
-* Convert every `0` into `-1`.
-* Convert every `1` into `+1`.
-* Create a `prefix_sum` array of size `n + 1`.
-* Storing 0 at the first index of prefix_sum. 
-* Store the running prefix sum of the balance array in to the rest of indices.
-* Use a map to store all indices where each prefix sum appears.
-* For each prefix sum value:
+This virtual position is index `-1` in the original `nums` array.
 
-  * Take the first index where it appears.
-  * Take the last index where it appears.
-  * Calculate the distance between them.
-  * Update the maximum length.
-* Return the maximum balanced subarray length.
+Example:
+
+```cpp
+nums = {0, 1, 0, 1}
+```
+
+Original nums indices:
+
+```text
+nums index:      -1    0    1    2    3
+nums value:            0    1    0    1
+```
+
+Here, index `-1` means:
+
+```text
+Before the array starts
+```
+
+This is why the prefix sum array starts with `0`.
 
 ---
 
-## Example
+# Step 1: Convert nums into Balance Array
 
-Input:
+Original array:
 
-```cpp
-nums = {0, 1, 1, 1, 1, 1, 0, 0, 0}
+```text
+nums index:       0    1    2    3
+nums value:       0    1    0    1
 ```
 
-Converted balance array:
+Convert:
 
-```cpp
-{-1, +1, +1, +1, +1, +1, -1, -1, -1}
+```text
+0 -> -1
+1 -> +1
 ```
 
-The algorithm finds the longest subarray where the number of `-1`s and `+1`s are equal.
+Balance array:
 
-Output:
+```text
+balance index:    0    1    2    3
+balance value:   -1   +1   -1   +1
+```
 
-```cpp
-6
+The balance array has the same normal indices as `nums`.
+
+So:
+
+```text
+nums[0] = 0  -> balance[0] = -1
+nums[1] = 1  -> balance[1] = +1
+nums[2] = 0  -> balance[2] = -1
+nums[3] = 1  -> balance[3] = +1
 ```
 
 ---
+
+# Step 2: Build Prefix Sum Array
+
+The prefix sum array stores the running balance.
+
+```text
+prefix index:     0    1    2    3    4
+prefix_sum:       0   -1    0   -1    0
+```
+
+The first value is:
+
+```text
+prefix_sum[0] = 0
+```
+
+This means:
+
+```text
+Before processing any element, the balance is 0.
+```
+
+Then we calculate prefix sum over the balance array:
+
+```text
+prefix_sum[1] = balance[0] = -1
+
+prefix_sum[2] = balance[0] + balance[1]
+              = -1 + 1
+              = 0
+
+prefix_sum[3] = balance[0] + balance[1] + balance[2]
+              = -1 + 1 - 1
+              = -1
+
+prefix_sum[4] = balance[0] + balance[1] + balance[2] + balance[3]
+              = -1 + 1 - 1 + 1
+              = 0
+```
+
+So the full prefix sum array is:
+
+```text
+prefix_sum = {0, -1, 0, -1, 0}
+```
+
+---
+
+# Step 3: Prefix Index and nums Index Relationship
+
+The prefix index represents how many elements have already been processed.
+
+```text
+prefix index 0 means before nums starts        -> virtual nums index -1
+prefix index 1 means after processing nums[0]  -> nums index 0
+prefix index 2 means after processing nums[1]  -> nums index 1
+prefix index 3 means after processing nums[2]  -> nums index 2
+prefix index 4 means after processing nums[3]  -> nums index 3
+```
+
+So:
+
+```text
+prefix index k represents the position after nums index k - 1
+```
+
+This is the main reason why prefix index difference gives the subarray length.
+
+---
+
+# Step 4: Store Prefix Sum Indices in a Map
+
+Now we store each prefix sum value and all prefix indices where it appears.
+
+Prefix sum array:
+
+```text
+prefix index:     0    1    2    3    4
+prefix_sum:       0   -1    0   -1    0
+```
+
+Map:
+
+```text
+prefix sum value 0  -> [0, 2, 4]
+prefix sum value -1 -> [1, 3]
+```
+
+This means:
+
+```text
+prefix sum 0 appeared at prefix indices 0, 2, and 4
+prefix sum -1 appeared at prefix indices 1 and 3
+```
+
+---
+
+# Step 5: Why Repeated Prefix Sum Gives a Balanced Subarray
+
+When the same prefix sum appears again, it means the running balance has returned to a previous value.
+
+That means the balance values added between those two prefix positions cancel out to `0`.
+
+Since:
+
+```text
+0 -> -1
+1 -> +1
+```
+
+a balance sum of `0` means the corresponding range in `nums` has equal number of `0`s and `1`s.
+
+---
+
+# Step 6: Calculate Length Using Prefix Indices
+
+For prefix sum value `0`:
+
+```text
+0 -> [0, 2, 4]
+```
+
+First prefix index:
+
+```text
+0
+```
+
+Last prefix index:
+
+```text
+4
+```
+
+Length:
+
+```text
+4 - 0 = 4
+```
+
+Using the nums index idea:
+
+```text
+prefix index 0 maps to virtual nums index -1
+prefix index 4 maps to nums index 3
+```
+
+So this is like:
+
+```text
+3 - (-1) = 4
+```
+
+The actual subarray is:
+
+```text
+nums[0..3] = {0, 1, 0, 1}
+```
+
+This contains:
+
+```text
+two 0s
+two 1s
+```
+
+So the balanced length is:
+
+```text
+4
+```
+
+---
+
+For prefix sum value `-1`:
+
+```text
+-1 -> [1, 3]
+```
+
+First prefix index:
+
+```text
+1
+```
+
+Last prefix index:
+
+```text
+3
+```
+
+Length:
+
+```text
+3 - 1 = 2
+```
+
+Using the nums index idea:
+
+```text
+prefix index 1 maps to nums index 0
+prefix index 3 maps to nums index 2
+```
+
+So the distance is like:
+
+```text
+2 - 0 = 2
+```
+
+But the actual balanced subarray starts after nums index `0`.
+
+So the actual subarray is:
+
+```text
+nums[1..2] = {1, 0}
+```
+
+This contains:
+
+```text
+one 1
+one 0
+```
+
+So the balanced length is:
+
+```text
+2
+```
+
+---
+
+
+# Summary
+
+The prefix sum index is not the same as the normal nums index.
+
+A prefix index represents a boundary position:
+
+```text
+prefix index 0 means before nums starts
+prefix index 1 means after nums[0]
+prefix index 2 means after nums[1]
+prefix index 3 means after nums[2]
+prefix index 4 means after nums[3]
+```
+
+So when we subtract two prefix indices, we get the length of the subarray between those two prefix boundaries.
+
+Repeated prefix sum means the running balance returned to a previous value. Therefore, the balance values between those two prefix positions sum to `0`, and the corresponding subarray in `nums` contains equal numbers of `0`s and `1`s.
+
+---
+
 # Time and Space Complexity of the code
 ## Time Complexity
 
