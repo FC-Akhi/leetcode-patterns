@@ -376,3 +376,11 @@ But with the current `std::map` implementation, the time complexity is:
 O(n log n)
 ```
 ** Will discuss this later in [Map vs unordered_map](README_learning_3.md)
+
+
+1. Averages
+2. Sums and totals
+3. Data interpretation tables
+4. Net change problems
+5. Arithmetic sequences
+6. Word problems involving running totals

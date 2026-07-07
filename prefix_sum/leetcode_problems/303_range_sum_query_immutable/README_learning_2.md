@@ -5,7 +5,7 @@
 
 ---
 
-# 📌 Overview
+# 📌 Returning or receiving a `std::vector` from a function in C++
 
 In this learning note, I explored different ways of returning or receiving a `std::vector` from a function in C++.
 

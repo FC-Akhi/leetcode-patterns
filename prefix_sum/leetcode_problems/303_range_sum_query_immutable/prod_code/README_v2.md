@@ -14,7 +14,7 @@ prod_code/
 |-- build.sh
 |-- num_array.hpp
 |-- num_array.cpp
-|-- range_sum_query_immutable_prod.cpp
+|-- range_sum_query_immutable_v4.cpp
 
 ```
 
@@ -72,7 +72,7 @@ The `sumRange()` method answers each range query in `O(1)` time.
 
 ---
 
-## `range_sum_query_immutable_prod.cpp`
+## `range_sum_query_immutable_v4.cpp`
 
 This is the **main test runner file**.
 

@@ -4,38 +4,6 @@
 * Description:
 * This program implements a local testing version of the Range Sum Query problem.
 * It takes an input vector from the user, validates the vector size and element
-* values based on the given constraints. It then creates a NumArray object.
-*
-* The program builds a prefix sum vector from the input vector. After that, it
-* validates multiple ranges and answer range sum queries using the prefix sum 
-* vector.
-*
-* In this version, the prefix sum vector is created using a brute-force approach.
-* For each index, the code recalculates the sum from index 0 to the current index.
-* However, after the prefix sum vector is created, each range sum query is answered
-* in constant time using the prefix sum formula. 
-*
-* Main Improvements:
-* 1. Validates input vector size, each vector element and range values. 
-* And Takes input from the user for local testing (previous - v1)
-* 2. Creates a prefix sum vector and Answers range sum queries in 
-* O(1) time after prefix sum construction. (previous - v2)
-*
-* Approach:
-* Prefix sum construction (bruteforce) + range sum query (constant time).
-*
-*
-* Author: F.C.Fahi
-* Date: 06 June 2026
-*/
-
-
-/*
-* Title: range_sum_query_immutable_v3
-*
-* Description:
-* This program implements a local testing version of the Range Sum Query problem.
-* It takes an input vector from the user, validates the vector size and element
 * values based on the given constraints, and then creates a NumArray object.
 *
 * The program builds a prefix sum vector from the input vector. After that, it
@@ -53,14 +21,9 @@
 * constant time using the prefix sum formula.
 *
 * Main Improvements:
-* 1. Validates input vector size, each vector element, and range values.
-*    Also takes input from the user for local testing. (previous - v1)
 *
-* 2. Creates a prefix sum vector and answers range sum queries in O(1) time
-*    after prefix sum construction. (previous - v2)
-*
-* 3. Optimizes prefix sum construction from O(n^2) to O(n) by reusing the
-*    previous prefix sum value. (current - v3)
+* 1. Optimizes prefix sum construction from O(n^2) to O(n) by reusing the
+*    previous prefix sum value.
 *
 * Approach:
 * Optimized prefix sum construction + constant-time range sum query.
@@ -104,9 +67,7 @@ public:
     * For each index i, it calculates the sum of all elements 
     * from index 0 to index i. 
     * 
-    * This is a brute-force prefix sum construction because for every index, 
-    * it loops backward and recalculates the sum from the current index to index 0. 
-    * 
+    * This is a optimized prefix sum construction 
     * Parameters: 
     *   nums - Reference to the input vector. 
     *   sizeOfVec - Size of the input vector. 
@@ -122,7 +83,7 @@ public:
 
         int sum = 0;
         
-        // Optimizes prefix sum construction from O(n^2) to O(n) - 3rd stage improvement
+        // Optimizes prefix sum construction from O(n^2) to O(n)
         prefixSum[0] = nums[0];
 
         for(int i = 1; i < sizeOfVec; i++) {
@@ -144,7 +105,7 @@ public:
         
 
         // Using Prefix Sum and calulating range 
-        // sum query in constant time - 2nd stage improvement 
+        // sum query in constant time
         if(left == 0) {
             return prefixSum[right];
         }
@@ -163,7 +124,7 @@ int main (void) {
     
     int sizeOfVec;
 
-    // Validate vector size based on constraint - 1st stage improvement
+    // Validate vector size based on constraint
     do {    
         printf("Size of input array or vector in range 1 <= size <= 10^4:\n");
         std::cin >> sizeOfVec;
@@ -178,7 +139,7 @@ int main (void) {
     printf("Input the vector elements with enter..\n");
     for (int i = 0; i < sizeOfVec; i++) {
         
-        // Validate each element based on constraint - 1st stage improvement
+        // Validate each element based on constraint
         do {
             printf("Insert value:");
             std::cin >> nums[i];
@@ -205,7 +166,7 @@ int main (void) {
     int left, right;
 
     // Take number of range queries
-    // Validate each element based on constraint - 1st stage improvement
+    // Validate each element based on constraint
     do{
         printf("\nHow many range?\n");
         std::cin >> numOfRanges;

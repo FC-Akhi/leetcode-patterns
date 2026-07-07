@@ -13,13 +13,11 @@
 * In this version, the prefix sum vector is created using a brute-force approach.
 * For each index, the code recalculates the sum from index 0 to the current index.
 * However, after the prefix sum vector is created, each range sum query is answered
-* in constant time using the prefix sum formula. 
+* in constant time using the prefix sum. 
 *
 * Main Improvements:
-* 1. Validates input vector size, each vector element and range values. 
-* And Takes input from the user for local testing (previous)
-* 2. Creates a prefix sum vector and Answers range sum queries in 
-* O(1) time after prefix sum construction. (current)
+* 1. Creates a prefix sum vector and Answers range sum queries in 
+* O(1) time after prefix sum construction.
 *
 * Approach:
 * Prefix sum construction (bruteforce) + range sum query (constant time).
@@ -107,7 +105,7 @@ public:
         
 
         // Using Prefix Sum and calulating range 
-        // sum query in constant time - 2nd stage improvement 
+        // sum query in constant time 
         if(left == 0) {
             return prefixSum[right];
         }
@@ -127,7 +125,7 @@ int main (void) {
     
     int sizeOfVec;
 
-    // Validate vector size based on constraint - 1st stage improvement
+    // Validate vector size based on constraint
     do {    
         printf("Size of input array or vector in range 1 <= size <= 10^4:\n");
         std::cin >> sizeOfVec;
@@ -142,7 +140,7 @@ int main (void) {
     printf("Input the vector elements with enter..\n");
     for (int i = 0; i < sizeOfVec; i++) {
         
-        // Validate each element based on constraint - 1st stage improvement
+        // Validate each element based on constraint
         do {
             printf("Insert value:");
             std::cin >> nums[i];
@@ -154,7 +152,7 @@ int main (void) {
     NumArray numArray(nums);
 
     
-    // Prefix sum operation - 2nd stage improvement
+    // Prefix sum operation
     std::vector<int> prefixSum = numArray.getPrefixSum(nums, sizeOfVec);
     
     // Debugging
@@ -169,7 +167,7 @@ int main (void) {
     int left, right;
 
     // Take number of range queries
-    // Validate each element based on constraint - 1st stage improvement
+    // Validate each element based on constraint
     do{
         printf("\nHow many range?\n");
         std::cin >> numOfRanges;
@@ -185,7 +183,7 @@ int main (void) {
             std::cin >> right;
         } while(left < 0 || left > right || right >= nums.size());
         
-        // Constant time operation inside sumRange() - 2nd stage improvement
+        // Constant time operation inside sumRange()
         printf("%d\n", numArray.sumRange(prefixSum, left, right));        
 
     }

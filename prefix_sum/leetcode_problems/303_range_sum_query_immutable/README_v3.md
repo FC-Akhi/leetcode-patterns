@@ -1,6 +1,6 @@
 # Range Sum Query - Immutable
 
-## Improved Code
+## 2nd Optimized Code
 
 ```text
 range_sum_query_immutable_v3
@@ -24,7 +24,10 @@ Then it creates a prefix sum vector:
 prefixSum = [1, 3, 6, 10, 15]
 ```
 
-Each position stores the cumulative sum from index `0` to that index.
+The prefix sum vector is created using an optimized approach.
+Instead of recalculating the sum from index 0 to the current index every time,
+it uses the previous prefix sum value to calculate the next prefix sum value.
+
 
 For range query:
 

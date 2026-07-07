@@ -1,6 +1,6 @@
 # Range Sum Query - Immutable
 
-## Improved Code
+## 1st Optimized Code
 
 ```text
 range_sum_query_immutable_v2
@@ -171,15 +171,3 @@ O(n^2)
 This can be improved.
 
 ---
-
-## Summary
-
-This version improves range sum queries using prefix sum.🤩
-
-The query part is now faster because each query takes `O(1)` time.🌟
-
-However, the prefix sum vector is still created using a brute-force method.😢
-
-So lets see if we can optimize in next version 💪
-
-

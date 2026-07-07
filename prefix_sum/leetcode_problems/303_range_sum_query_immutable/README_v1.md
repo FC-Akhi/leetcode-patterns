@@ -1,6 +1,6 @@
 # Range Sum Query - Immutable
 
-## Improved Code
+## Optimized Bruteforce Code
 
 ```text
 range_sum_query_immutable_v1
@@ -8,85 +8,7 @@ range_sum_query_immutable_v1
 
 ---
 
-## What am I solving?
 
-In this problem, I am solving the **range sum query** problem.
-
-Given an integer array or vector, the task is to calculate the sum of elements between two indices:
-
-```text
-left and right
-```
-
-Both `left` and `right` are included in the sum.
-
-Example:
-
-```text
-nums = [-2, 0, 3, -5, 2, -1]
-
-sumRange(0, 2) = nums[0] + nums[1] + nums[2]
-               = -2 + 0 + 3
-               = 1
-```
-
-So the main goal is to answer queries like:
-
-```text
-What is the sum from index left to index right?
-```
-
----
-
-## Why am I solving it?
-
-I am solving this problem to understand the basic idea of **range queries**.
-
-This problem is also useful for learning the **prefix sum pattern**, because of the brute-force approach in currect version it helps me understand why an optimized prefix sum solution is needed later.
-
-In this version, I am intentionally keeping the solution brute-force so that I can clearly understand:
-
-```text
-1. How range sum works
-2. How multiple queries are handled
-3. Why repeated summation can become expensive
-4. Why prefix sum improves the solution
-```
-
-This version is part of my step-by-step learning process.
-
----
-
-## How does the solution work?
-
-The `NumArray` class stores the input vector inside the object.
-
-The method:
-
-```cpp
-sumRange(left, right)
-```
-
-takes two indices as input.
-
-Then it loops from `left` to `right` and adds each element one by one.
-
-Example:
-
-```text
-nums = [-2, 0, 3, -5, 2, -1]
-
-sumRange(2, 5)
-= nums[2] + nums[3] + nums[4] + nums[5]
-= 3 + (-5) + 2 + (-1)
-= -1
-```
-
-So the solution directly calculates the sum for every query.
-
-This is why it is a **brute-force solution**.
-
----
 
 ## Improvements in This Version
 
@@ -233,20 +155,3 @@ So if there are many queries, the solution can become slow.
 This limitation will be improved in the next version using the **prefix sum** approach.
 
 ---
-
-## Summary
-
-This version helps me understand the brute-force range sum query approach clearly.
-
-It includes:
-
-```text
-1. Class-based implementation
-2. User input for local testing
-3. Constraint validation
-4. Multiple range queries
-5. Brute-force range sum calculation
-6. A clear space-time trade-off decision
-```
-
-This version is mainly for learning and documentation before moving to the optimized prefix sum solution.

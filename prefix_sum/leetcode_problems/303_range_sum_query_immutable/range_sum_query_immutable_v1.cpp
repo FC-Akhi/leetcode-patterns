@@ -16,7 +16,7 @@
 *
 * Main Improvements:
 * 1. Validates input vector size, each vector element and range values. 
-* And Takes input from the user for local testing. (current)
+* And Takes input from the user for local testing.
 *
 * Approach:
 * Brute-force range sum calculation
@@ -65,10 +65,10 @@ int main (void) {
     
     int sizeOfVec;
 
-    // Validate vector size based on constraint - 1st stage improvement
+    // Validate vector size based on constraint
     do {    
         printf("Size of input array or vector in range 1 <= size <= 10^4:\n");
-        // Take user input - 1st stage improvement
+        // Take user input
         std::cin >> sizeOfVec;
     } while (sizeOfVec < 1 || sizeOfVec > 10000);
     
@@ -81,10 +81,10 @@ int main (void) {
     printf("Input the vector elements with enter..\n");
     for (int i = 0; i < sizeOfVec; i++) {
         
-        // Validate each element based on constraint - 1st stage improvement
+        // Validate each element based on constraint
         do {
             printf("Insert value:");
-            // Take user input - 1st stage improvement
+            // Take user input
             std::cin >> nums[i];
         } while (nums[i] < -100000 || nums[i] > 100000);
     }
@@ -98,10 +98,10 @@ int main (void) {
     int left, right;
 
     // Take number of range queries
-    // Validate each element based on constraint - 1st stage improvement
+    // Validate each element based on constraint
     do{
         printf("Take number of ranges:\n");
-        // Take user input - 1st stage improvement
+        // Take user input
         std::cin >> numOfRanges;
     } while (numOfRanges < 0 || numOfRanges > 10000);
     
@@ -115,7 +115,7 @@ int main (void) {
             std::cin >> right;
         } while(left < 0 || left > right || right >= nums.size());
         
-        // Validate range inside sumRange() - 1st stage improvement
+        // Validate range inside sumRange()
         printf("%d\n", numArray.sumRange(left, right));        
 
     }
