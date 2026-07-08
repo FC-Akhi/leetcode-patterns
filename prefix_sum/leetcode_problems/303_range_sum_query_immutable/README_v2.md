@@ -157,7 +157,7 @@ O(n)
 
 ---
 
-## Current Limitation
+# Limitations of the Current Implementation
 
 The main limitation is in prefix sum construction.
 

@@ -194,19 +194,6 @@ This is why it is a **brute-force solution**.
 ---
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 # Time and Space Complexity of the code
 ## Time Complexity
 - Constructor: O(n), because this->nums = nums copies the whole n size vector
@@ -246,3 +233,4 @@ the total worst-case time is O(n * m)
 
 ```range_sum_query_immutable_v4``` -- Production Grade Code
 - Write production grade code with header, library and shell code.
+- Set unit tester

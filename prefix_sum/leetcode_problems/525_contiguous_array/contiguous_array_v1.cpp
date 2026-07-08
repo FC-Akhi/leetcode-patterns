@@ -1,5 +1,5 @@
 /* 
-* Title: contiguous_array_v0
+* Title: contiguous_array_v1
 *
 * Description: 
 * This program implements LeetCode 525: Contiguous Array.
@@ -20,9 +20,13 @@
 *
 * The program tracks and updates the maximum valid subarray length found.
 *
+* Main Improvements:
+* 1. Validates input vector size, each vector element 
+* And Takes input from the user for local testing.
+* 2. Improve reduce extra O(n) of space.
+*
 * Approach:
-* Brute-force contiguous subarray checking using a balance array and
-* running sum. This is the initial brute-force style solution.
+* Optimized Bruteforce
 *
 * Author: F.C.Fahi 
 * Date: 08 July 2026 
@@ -30,7 +34,7 @@
 
 
 
-
+#include<iostream>
 #include<stdio.h>
 #include<vector>
 #include<map>
@@ -40,10 +44,9 @@ public:
 
     // Solution(){};
 
-    int findMaxLength(std::vector<int>& nums) {
-        
-        // Get the sise of input nums
-        int n = nums.size();
+
+    // Generate balance array
+    std::vector<int> getBalanceArray(std::vector<int>& nums, int n) {
 
         // Declare empty vector for balance array
         std::vector<int> balance_array(n);
@@ -56,31 +59,47 @@ public:
                 balance_array[i] = 1;
         }
 
+        return balance_array;
+
+    }
+
+
+    // Get the maximum length of contiguous subarray of 0s and 1s
+    int findMaxLength(std::vector<int>& nums) {
+        
+        // Get the sise of input nums
+        int n = nums.size();
+
+        // Declare empty vector for balance array
+        std::vector<int> balance_array(n);
+
+        // Get balance array
+        balance_array = getBalanceArray(nums, n);
+
         // Declare helper variables and vector
         int sum = 0;
         int length = 0;
         int max_length = 0;
-        std::vector<int> numbers;
+        
 
 
         // Iterating over each numbers to find the maximum length of 0s and 1s
         for (int i = 0; i < n - 1; i++) {
 
             sum = balance_array[i];
-            numbers.push_back(balance_array[i]);
+            
 
             for (int j = i+1; j < n; j++){
 
                 sum = sum + balance_array[j];
-                numbers.push_back(balance_array[j]);
+            
 
                 if(sum == 0) {
-                    length = numbers.size();
+                    length = (j - i) + 1;
                     if (max_length < length)
                         max_length = length;
                 }
             }
-            numbers.clear();
         }
 
         return max_length;
@@ -108,14 +127,28 @@ public:
 */
 int main() {
 
-    std::vector<int> nums = {0, 0, 1, 0, 1, 1};
+    int sizeOfNums;
+    
+    do {
+        std::cin >> sizeOfNums;
+    } while (sizeOfNums < 1 || sizeOfNums > 100000);
+
+
+    std::vector<int> nums(sizeOfNums);
+   
+    for (int i = 0; i < sizeOfNums; i++) {
+
+        do {
+            std::cin >> nums[i];
+        } while (nums[i] < 0 || nums[i] > 1);
+    }
+    
 
     Solution test;
 
     int max_length = test.findMaxLength(nums);
-
+    
     printf("%d\n", max_length);
     
-
     return 0;
 }

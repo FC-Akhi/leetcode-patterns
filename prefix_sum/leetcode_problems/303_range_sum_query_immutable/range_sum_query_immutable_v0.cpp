@@ -54,7 +54,21 @@ public:
 
 
 
-
+// For my own test in local machine
+/* 
+* Function: main 
+* Description: 
+* This function is used only for local testing. 
+* 
+* Input: 
+*   A vector is manually created
+* 
+* Process: 
+*   1. Create a NumArray object. 
+*   2. Take left and right of the range.
+*   2. Call sumRange() with input ranges. 
+*   3. Print the returned sum of the numbers in range. 
+*/
 int main (void) {
 
 

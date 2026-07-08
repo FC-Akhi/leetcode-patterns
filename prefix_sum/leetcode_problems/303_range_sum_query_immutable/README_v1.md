@@ -144,7 +144,7 @@ O(n)
 
 ---
 
-## Current Limitation
+# Limitations of the Current Implementation
 
 This version is still brute-force.
 

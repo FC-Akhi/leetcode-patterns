@@ -19,7 +19,7 @@
 * And Takes input from the user for local testing.
 *
 * Approach:
-* Brute-force range sum calculation
+* Optimized Brute-force range sum calculation
 *
 * Author: F.C.Fahi 
 * Date: 04 June 2026 

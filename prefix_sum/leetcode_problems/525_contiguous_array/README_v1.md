@@ -1,234 +1,72 @@
 # Contiguous Array
-## Bruteforce Code
+
+## Optimized Bruteforce Code
 
 ```text
 contiguous_array_v1.cpp
 ```
 ---
 
+## Improvements in This Version
+In this improved version, I focused on making the code better for local testing and learning.
 
-## What Am I Solving?
-
-This code solves **LeetCode 525: Contiguous Array**.
-
-The problem asks:
-
-```text
-Given a binary array nums, find the maximum length of a contiguous subarray
-that contains an equal number of 0s and 1s.
-```
-
-Example:
-
-```cpp
-nums = {0, 0, 1, 0, 1, 1}
-```
-
-One valid longest balanced subarray is:
+### 1. Constraint validation added
+The code validates the input size based on the given constraint:
 
 ```text
-{0, 0, 1, 0, 1, 1}
+1 <= nums.length <= 10^5
 ```
 
-It contains:
+It also validates each element based on the constraint:
 
 ```text
-three 0s
-three 1s
+0 <= nums[i] <= 1 Note: the nums is the int type vector
 ```
 
-So the answer is:
+### 2. User input added for local testing
+This version takes user input for:
 
 ```text
-6
+1. Vector size
+2. Vector elements
 ```
 
----
+This is not required by LeetCode, but it is useful for local testing and learning.
 
-## Why Am I Solving It?
+LeetCode automatically handles input internally, but this local version helps me understand how the class works with manual input.
 
-I am solving **LeetCode 525: Contiguous Array** to understand how a real-world balanced-condition problem can be converted into a programming problem.
-
-This problem is not only about finding equal numbers of `0`s and `1`s in an array. The deeper idea is learning how to handle two opposite categories and find the longest continuous range where both categories are balanced.
-
-A real-life example is **load balancer request log analysis**.
-
-Suppose a system has two backend servers:
-
-```text
-0 = request sent to Server A
-1 = request sent to Server B
-```
-
-A request log may look like this:
-
-```text
-requests = [0, 0, 1, 0, 1, 1]
-```
-
-The engineering question can be:
-
-```text
-During what longest continuous period was the traffic perfectly balanced between the two servers?
-```
-
-This is the same structure as LeetCode 525.
-
-In LeetCode terms:
-
-```text
-0 = one category
-1 = another category
-```
-
-In the load-balancer example:
-
-```text
-0 = Server A
-1 = Server B
-```
-
-So the task becomes:
-
-```text
-Find the longest contiguous request window where:
-number of Server A requests == number of Server B requests
-```
-
-To solve this efficiently, we can convert the two categories into balance values:
-
-```text
-Server A -> -1
-Server B -> +1
-```
-
-Then a window with total balance `0` means both servers received the same number of requests.
+### 3. Design decision about extra space
+In the previous version, I used an extra vector in method `findMaxLength` to store the current subarray. And then used its size to calculate the length. In this version, I removed that extra vector and replaced it with constant-time expression `j - i + 1`.
 
 
-This same idea can be used in many other areas, such as system logs, A/B testing logs, success/failure events, profit/loss records, and other binary event streams.
+### 4. Method getBalanceArray
+Extract the balance array calculation from `findMaxLength` and make new method. Both `findMaxLength` and `getBalanceArray` is not having single responsibility. 
 
 ---
 
 ## Complexity Analysis
-
 ### Time Complexity
-
-The solution uses two nested loops:
-
-```cpp
-for (int i = 0; i < n - 1; i++) {
-    for (int j = i + 1; j < n; j++) {
-        ...
-    }
-}
-```
-
-The outer loop chooses the starting index.
-
-The inner loop expands the ending index.
-
-So the solution checks many possible subarrays.
-
-The number of checked subarrays is approximately:
+Let:
 
 ```text
-n + (n - 1) + (n - 2) + ... + 1
+n = size of the input vector
 ```
-
-This becomes:
-
-```text
-O(n^2)
-```
-
-So the time complexity is:
-
-```text
-O(n^2)
-```
-
----
+Still time complexity is 
+O(n²)
 
 ### Space Complexity
+- nums          -> O(n)
+- balance_array -> O(n)
 
-The code creates:
-
-```cpp
-std::vector<int> balance_array(n);
-```
-
-This takes:
+So the space complexity is:
 
 ```text
 O(n)
-```
-
-The code also creates:
-
-```cpp
-std::vector<int> numbers;
-```
-
-In the worst case, this can store up to `n` values.
-
-So it also takes:
-
-```text
-O(n)
-```
-
-Total space complexity:
-
-```text
-O(n)
-```
-
----
-
-## Current Version Summary
-
-```text
-Problem: LeetCode 525 - Contiguous Array
-Approach: Brute-force style solution
-Main technique: Convert 0 to -1 and 1 to +1
-Balanced condition: subarray sum == 0
-Time Complexity: O(n^2)
-Space Complexity: O(n)
 ```
 ---
 
-## Future Improvement
+# Limitations of the Current Implementation
+- This version is still brute-force.
+- Time complexity is O(n²)
 
-This brute-force version is useful for understanding the problem.
-
-Later, this solution can be improved using:
-
-```text
-prefix sum + map/hash map
-```
-
-The optimized idea is:
-
-```text
-If the same prefix sum appears again, the elements between those two prefix positions have total balance 0.
-```
-
-That optimized approach can reduce the time complexity from:
-
-```text
-O(n^2)
-```
-
-to:
-
-```text
-O(n)
-```
-
-when using `unordered_map`, or:
-
-```text
-O(n log n)
-```
-
-when using `std::map`.
+This limitation will be improved in the next version using the **prefix sum** approach and hash map.
