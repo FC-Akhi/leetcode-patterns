@@ -13,31 +13,9 @@ prefix_sum/
 |--> README_init.md
 |--> prefix_sum.png
 |--> leetcode_problems/
-|
-|--> 303_range_sum_query_immutable/
-|    |--> prod_code
-|    |    |--> build.sh
-|    |    |--> num_array.cpp
-|    |    |--> num_array.hpp
-|    |    |--> range_sum_query_immutable_prod.cpp
-|    | 
-|    |--> problem_statement.png
-|    |--> range_sum_query_immutable_v0.cpp
-|    |--> range_sum_query_immutable_v1.cpp
-|    |--> range_sum_query_immutable_v2.cpp
-|    |--> range_sum_query_immutable_v3.cpp
-|    |--> range_sum_query_immutable_v4.cpp
-|    |--> README_learning_1.md
-|    |--> README_learning_2.md
-|    |--> README_learning_3.md
-|    |--> README_learning_4.md
-|    |--> README_learning_5.md
-|    |--> README_learning_6.md
-|    |--> README_v0.md
-|    |--> README_v1.md
-|    |--> README_v2.md
-|    |--> README_v3.md
-|    |--> README_v4.md
+|   |--> 303_range_sum_query_immutable/
+|   |--> 525_contiguous_array/
+|   |--> 560_subarray_sum_equals_k/
 ```
 
 # Prefix Sum

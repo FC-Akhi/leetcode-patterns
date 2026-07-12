@@ -1,6 +1,6 @@
 # Simple Production-Level Code Structure 🚀
 
-This folder contains a simple production-level version of the **Range Sum Query - Immutable** problem.
+This folder contains a simple production-level version of the **Contiguous Array** problem.
 
 The goal is to keep the code clean, separated, reusable, and easy to test.
 
@@ -12,19 +12,19 @@ The goal is to keep the code clean, separated, reusable, and easy to test.
 prod_code/
 |
 |-- build.sh
-|-- num_array.hpp
-|-- num_array.cpp
-|-- range_sum_query_immutable_v4.cpp
+|-- contiguous_array.hpp
+|-- contiguous_array.cpp
+|-- contiguous_array_v4.cpp
 
 ```
 
 ---
 
-## `num_array.hpp`
+## `contiguous_array.hpp`
 
 This is the **header file**.
 
-It contains the class declaration for `NumArray`.
+It contains the class declaration for `Solution`.
 
 It tells what the class has, but not the full implementation details.
 
@@ -37,38 +37,33 @@ public constructor
 public methods
 ```
 
-In this project, `num_array.hpp` declares:
+In this project, `contiguous_array.hpp` declares:
 
 ```text
-NumArray class
-prefix_sum_ vector
-NumArray constructor
-sumRange() method
+Solution class
+getBalanceArray() method
+getPrefixSum() method
+findMaxLength() method
 ```
 
 This file works like the public interface of the class.
 
 ---
 
-## `num_array.cpp`
+## `contiguous_array.cpp`
 
 This is the **implementation file**.
 
-It contains the actual logic of the `NumArray` class.
+It contains the actual logic of the `Solution` class.
 
-In this project, `num_array.cpp` contains:
+In this project, `contiguous_array.cpp` contains:
 
 ```text
-constructor implementation
-prefix sum construction
-sumRange() implementation
-range validation
-exception handling
+getBalanceArray() implementation
+getPrefixSum() implementation
+findMaxLength() implemenattion
+and some exception handling
 ```
-
-The constructor builds the prefix sum vector once.
-
-The `findMaxLength()` method answers each range query in `O(1)` time.
 
 ---
 

@@ -28,7 +28,7 @@
 * 1. Implements Prefix sum approach and  std::map
 *
 * Approach:
-* Prefix sum construction (bruteforce)
+* Prefix sum construction
 *
 * Author: F.C.Fahi 
 * Date: 08 July 2026 
