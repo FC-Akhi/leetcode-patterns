@@ -34,14 +34,14 @@ leetcode_problems/
 ```
 
 For each LeetCode problem, I maintain multiple versions of the solution.
-Each version represents a step-by-step improvement from a brute-force (leetcode version only) approach to a more optimized approach.
+Each version represents a step-by-step improvement from a brute-force approach to a more optimized approach.
 
 For example:
 
 ```text
-range_sum_query_immutable_v0.cpp ---> Bruteforce approach and only leetcode submitable
-range_sum_query_immutable_v1.cpp ---> Optimized prefix sum solution with local testing and industry-style development structure (except 303 problem set)
-range_sum_query_immutable_v2.cpp ---> More optimized and can also run and test in local system
+range_sum_query_immutable_v0.cpp ---> nesty approach 
+range_sum_query_immutable_v1.cpp ---> Optimized prefix sum solution
+range_sum_query_immutable_v2.cpp ---> More optimized
 ...
 ```
 
@@ -77,7 +77,7 @@ README_v2.md
 
 Here:
 
-* `v0` usually represents the brute-force solution and only leetcode submitable.
+* `v0` usually represents the initial nesty solution
 * `v1` represents an improved version.
 * `v2` or later versions represent further optimized approaches.
 ...
@@ -89,23 +89,7 @@ Here:
 leetcode-patterns/
 |
 |--> prefix_sum/
-|    |
-|    |--> README_init.md
-|    |--> prefix_sum.png
-|    |--> leetcode_problems/
-|         |
-|         |--> 303_range_sum_query_immutable/
-|         |    |
-|         |    |--> range_sum_query_immutable_v0.cpp
-|         |    |--> range_sum_query_immutable_v1.cpp
-|         |    |--> range_sum_query_immutable_v2.cpp
-|         |    |--> range_sum_query_immutable_v3.cpp
-|         |    |--> README_v0.md
-|         |    |--> README_v1.md
-|         |    |--> README_v2.md
-|         |    |--> README_v3.md
-|         |    |--> README_learning_1.md
-|         |    |--> README_learning_2.md
+|--> two_pointers/
 ...
 ```
 ---
